@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.add{
+  border-radius: 3px;
+  margin-left: 1rem;
+  width: 100px;
+}
+
+.delete{
+  border-radius: 15px;
+  margin-left: 1rem;
+  background-color: rgb(0 ,0 ,0 , 0.5);
+  color: white;
+}
+
+.update{
+  border-radius: 15px;
+  margin-left: 1rem;
+  background-color: rgb(0 ,0 ,0 , 0.4);
+  color: white;
+}
+
+.myVal{
+  background-color: rgb(0 ,0 ,0 , 0.2);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  border-radius: 10px;
+}
+
+.UlLi{
+  list-style-type: none;
+}
+
