@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -69,4 +70,62 @@
 .UlLi{
   list-style-type: none;
 }
+
+
+/**********************************************************************************************************************/
+
+
+.MenuMain{
+  list-style-type: none;
+  background-color: #99ffcc;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+  text-decoration: none;
+}
+
+.MenuMain li{
+  padding-right: 2rem;
+  display: inline;
+}
+
+.MenuMainA{
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.7);;
+  font-size: 20px;
+}
+
+.HeaderUL{
+  list-style-type: none;
+  background: linear-gradient(to bottom, #ffffff 30%, #99ffcc 70%);
+  padding-top: 1.5rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+
+}
+
+.HeaderUL li{
+  display: inline;
+}
+
+.MyWebsite{
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+.ImgHeader{
+  vertical-align: middle;
+  margin-left: -3rem;
+}
+
+.FooterMy{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  background: #99ffcc;
+  color: #fff;
+  width: 100%;
+}
+
 
