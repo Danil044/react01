@@ -14,7 +14,7 @@ export default class PortfoliosListCreateItem extends React.Component{
         this.onInputChange = this.onInputChange.bind(this)
         this.onUploadFile = this.onUploadFile.bind(this)
         this.saveDataFile = this.saveDataFile.bind(this)
-
+        this.onDelete = this.onDelete.bind(this);
     }
 
     saveDataFile(data){
@@ -70,6 +70,7 @@ export default class PortfoliosListCreateItem extends React.Component{
             formData.append(name, this.state.portfolio[name])
         }
         */
+
         fetch('/api/portfolios/',
             {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -95,6 +96,20 @@ export default class PortfoliosListCreateItem extends React.Component{
         this.setState(state)
     }
 
+    onDelete(ev) {
+        const state = this.state
+        this.arrRemove(state.portfolio, this.state.isVisible);
+        state.isVisible = !state.isVisible
+        state.portfolio = {};
+        this.setState(state)
+    }
+
+    arrRemove(arr, value){
+        return arr.filter(function(ele) {
+            return ele !== value;
+        })
+    }
+
     onInputChange(ev){
         const state = this.state
         const name = ev.target.name
@@ -110,16 +125,19 @@ export default class PortfoliosListCreateItem extends React.Component{
         let img
 
         if(this.state.portfolio.imgBlob)
-            img = (<img src={this.state.portfolio.imgBlob} width="50px" height="50px" alt='prev'/>)
+            img = (<img src={this.state.portfolio.imgBlob} width="30px" height="30px" alt='prev'/>)
         else
             img = (<div>Not Img</div>)
 
         return(
             <form id='formPortfolio'>
+
                 {img}
+
                 <input type="text" name="name" onChange={this.onInputChange}/>
                 <input type="file" name="img" onChange={this.onUploadFile} id='formImg' /><br />
                 <input type="button" value="save" onClick={this.onSave}/>
+                <input type={"button"} value="delete" onClick={this.onDelete}/>
                 <div onClick={this.changeVisible}> hide </div>
             </form>
         )

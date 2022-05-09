@@ -13,7 +13,6 @@ export default class PortfoliosListItem extends React.Component{
         this.onSave = this.onSave.bind(this)
         this.onCancel = this.onCancel.bind(this)
         this.onInputChange = this.onInputChange.bind(this)
-
     }
 
     onInputChange(ev){
@@ -37,6 +36,8 @@ export default class PortfoliosListItem extends React.Component{
         this.onCancel()
     }
 
+
+
     onCancel(){
         const state = this.state
         state.isEdit = false
@@ -48,15 +49,18 @@ export default class PortfoliosListItem extends React.Component{
         let img
 
         if(this.state.portfolio.imgBlob)
-            img = (<img src={this.state.portfolio.imgBlob} width="150px" height="150px"/>)
+            img = (<img src={this.state.portfolio.imgBlob} width="50px" height="50px"/>)
         else
-            img = (<div>Not Img</div>)
+            img = (<img  src="../assets/img/no-internet.png" width="50px" height="50px"/>)
 
         return (
-            <div>
+            <div className="PortfolioMain">
                 <h2> {this.props.portfolio.name} </h2>
-                {img}
-                <input type='button' onClick={this.onChangeEdit}/>
+
+                <p>{img}</p>
+
+                <input type='button' value="Update" onClick={this.onChangeEdit}/>
+
             </div>
         )
     }
@@ -68,8 +72,8 @@ export default class PortfoliosListItem extends React.Component{
                        name='name'
                        onChange={this.onInputChange}
                        defaultValue={this.props.portfolio.name}/>
-                <button type='button' onClick={this.onSave} >Save </button>
-                <button type='button' onClick={this.onCancel} >Cancel </button>
+                <button type='button' onClick={this.onSave} > Save </button>
+                <button type='button' onClick={this.onCancel} > Cancel </button>
 
             </div>
         )

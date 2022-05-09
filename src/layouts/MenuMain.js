@@ -10,7 +10,7 @@ export default class MenuMain extends React.Component{
                         <a href="/" className="MenuMainA"><a >Home</a></a>
                     </li>
                     <li>
-                        <a href="/about" className="MenuMainA">About</a>
+                        <a href="/about" className="MenuMainA">MyArray</a>
                     </li>
                     <li>
                         <a href="/contact" className="MenuMainA">Contact</a>

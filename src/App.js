@@ -1,4 +1,5 @@
 import './assets/css/App.css';
+import './assets/css/portfolio/portfolio.css'
 import MyReactive from "./components/MyReactive";
 //import MyArray from "./components/MyArray";
 

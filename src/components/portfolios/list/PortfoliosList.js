@@ -31,6 +31,11 @@ export default class PortfoliosList extends React.Component{
         this.setState(state)
     }
 
+    onDelete(ev){
+        this.state.portfolios.splice(ev, 1);
+        this.setState({myArray: this.state.portfolios})
+    }
+
     onLogAll(){
         console.log(this.state.portfolios)
     }
@@ -64,9 +69,18 @@ export default class PortfoliosList extends React.Component{
                 <button onClick={this.localLoadAll}>localeLoadAll</button>
                 <button onClick={this.localClear}>localClear</button>
 
-                <ul>
+                <ul className="UlPortfolio">
                     {this.state.portfolios.map(p => {
-                        return(<PortfoliosListItem portfolio = {p} key={'portfolioListItem_' + p.id} />)
+                        return(
+                            <li  key={'portfolioListItem_' + p.id}>
+                                <PortfoliosListItem portfolio = {p}></PortfoliosListItem>
+                                <div className="ButtonDelete">
+                                    <button onClick={this.onDelete.bind(this,'portfolioListItem_' + p.id)}>
+                                        Delete
+                                    </button>
+                                </div>
+                            </li>
+                        )
                     })}
                 </ul>
 
